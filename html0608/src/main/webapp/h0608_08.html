@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>css</title>
+		<style>
+		* { padding:0; margin:0;}
+		body{height: 3000px;}
+		#main{width:500px; height:500px; border:1px solid black;}
+		.c01,.c02,.c03,.c04,.c05{ width:50px; height:50px; background: yellow;
+		  border:1px solid black; text-align: center; box-sizing: border-box;
+		  padding-top:10px; font-size: 20px;
+		 } 
+		 .c01{ position: relative; left:450px; top:450px; z-index: 3; } 
+		 .c02{ position: absolute; left:400px; top:50px; } 
+		 .c03{ position: relative; left:100px; top:400px; } 
+		 .c04{ position: absolute; left:200px; top:200px; } 
+		 .c05{ position: fixed; left:450px; top:225px; z-index: 1; } 
+		</style>
+	</head>
+	<body>
+	  <div id="main">
+	    <div class="c01">1</div>
+	    <div class="c02">2</div>
+	    <div class="c03">3</div>
+	    <div class="c04">4</div>
+	    <div class="c05">5</div>
+	  
+	  
+	  </div>
+	</body>
+</html>
