@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>animation</title>
+		<style>
+		  div{width:200px; height:200px; border:1px solid black; background: blue; 
+		    animation:changeDiv 2s alternate infinite;
+		    
+		  }
+		  
+		  @keyframes changeDiv{
+		    from{
+		    }
+		    to{
+		       transform:translate(500px);
+		       border:5px solid black;
+		       background:red;
+		    }
+		  }
+		  @keyframes changeDiv2{
+		    from{
+		    }
+		    to{
+		       transform:rotate(360deg);
+		       
+		    }
+		  }
+		  
+		</style>
+	</head>
+	<body>
+	  <div></div>
+	
+	</body>
+</html>

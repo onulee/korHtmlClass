@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>선택자</title>
+		<style>
+		  a:visited{color:blue;}
+		  input:checked + label{ color:blue; font-weight: 600; }
+		  li{list-style: none; width:150px; height: 40px; border:1px solid black;
+		  text-align: center; line-height: 2.5; }
+		  ul li:nth-child(2n+1) { background:pink; font-weight: 600;    }
+		  ul li:nth-child(5) { background: green;       }
+		  ul li:nth-of-type(5) { background: blue;       }
+          ul li:hover{ background: yellow;}    
+              
+		</style>
+	</head>
+	<body>
+	 <h2>과일종류</h2>
+	   <ul>
+	     <h3>제목</h3>
+	     <li>사과</li>
+	     <li>수박</li>
+	     <li>참외</li>
+	     <li>배</li>
+	     <li>포도</li>
+	     <li>자두</li>
+	     <li>딸기</li>
+	   </ul>
+	
+	
+	   <form action="">
+	      <input type="text" name="stuno" disabled value="글자입력 안됨" ><br>
+	      
+	      <label>신청과목을 선택하세요.</label><br>
+	      <input type="radio" name="subject" id="s" value="speaking">
+	      <label for="s">회화</label>
+	      <input type="radio" name="subject" id="g" value="grammar">
+	      <label for="g">문법</label>
+	      <input type="radio" name="subject" id="w" value="writing">
+	      <label for="w">작문</label>
+	      
+	   </form>
+	
+	   <ul>
+	     <a href="http://www.google.co.kr">
+	     	<li>구글</li>
+	     </a>
+	     <li><a href="http://www.google.co.kr">구글</a></li>
+	     <li><a href="http://www.daum.net">다음</a></li>
+	     <li><a href="http://www.naver.com">네이버</a></li>
+	   </ul>
+	
+	</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style>
+		  .c1{ width:600px; height:600px; border:1px solid black; 
+		       overflow: hidden; margin:0 auto;
+		  }
+		  img:hover{ animation:scaleImg 2s;  animation-fill-mode:both; }
+		  @keyframes scaleImg{
+		    from{ transform:scale(1);  }
+		    to{ transform:scale(1.5);
+		       
+		     }
+		  }
+		  
+		  .c2{
+		  width:300px; height:300px; border:1px solid black; margin:0 auto;
+		      
+		  }
+		  .c2:hover{ 
+		  animation:changeDiv 1.5s infinite,changeDiv2 1.5s infinite alternate;
+		     
+		   }
+		  @keyframes changeDiv{
+		    from{ transform:perspective(300px) rotateX(0deg) rotateY(0deg); }
+		    50%{  transform:perspective(300px) rotateX(-180deg) rotateY(0deg); }
+		    to{ transform:perspective(300px) rotateX(-180deg) rotateY(-180deg); }
+		  }
+		  
+		  @keyframes changeDiv2{
+		    from{ background:red; }
+		    50%{ background:green; }
+		    to{ background:blue; }
+		  }
+		  
+		</style>
+	</head>
+	<body>
+	  <div class="c1">
+	    <img src="images/kim1.jpg">
+	  </div>
+	
+	
+	  <div class="c2"></div>
+	
+	</body>
+</html>
