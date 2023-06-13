@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<script>
+		    
+	        function titleAdd(){
+	        	document.getElementById("h1").innerText = "뉴진스 - 민지";
+	        }
+		
+		
+		    $(function(){
+		    	$("#h1").text("뉴진스 - 민지");
+		    });
+		    
+		    $(document).ready(function(){
+		    	
+		    });
+		</script>
+		<title>제이쿼리</title>
+		<style>
+		  * {padding:0; margin:0;}
+		  div{width:300px; height:300px; }
+		  img{width:300px; }
+		</style>
+	</head>
+	<body>
+	  <button onclick="titleAdd()">제목변경</button>
+	  <h2 id="h1">제목</h2>
+	  <div>
+	    <img src="images/min1.jpg">
+	  </div>
+	
+	</body>
+</html>
