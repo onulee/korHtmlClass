@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>게시판</title>
+		<style>
+		  * {padding:0; margin:0;}
+		  h2{width:1020px; text-align: center; margin:25px auto; font-size:40px; }
+		  table{width:1020px; margin:0 auto; text-align: center; }
+		  table,th,td{ border:1px solid black; border-collapse: collapse;}
+		  th{height:60px; background: #efefef; font-size: 19px;}
+		  td{height: 50px; font-size: 18px; }
+		  div{width:150px; height:60px; margin:20px auto; }
+		  button{ width:150px; height:60px; }
+		</style>
+	</head>
+	<body>
+		<h2>성적처리프로그램</h2>
+	    <table>
+	      <tr>
+	        <th>이름</th>
+	        <th>국어</th>
+	        <th>영어</th>
+	        <th>수학</th>
+	        <th>합계</th>
+	        <th>평균</th>
+	      </tr>
+	      <tbody id="tbody">
+	      
+	      </tbody>
+	    </table>
+	    <div>
+	      <button type="button" onclick="stuScore()">성적입력</button>
+	    </div>
+		<script src="js/js0613_02.js"></script>
+	</body>
+</html>
