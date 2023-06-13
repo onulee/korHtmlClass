@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Date</title>
+		<script>
+		   var today = new Date(); //객체선언
+		   var lastDay = new Date(2023,11,31); 
+		   
+		   function add(){
+			   var nowMonth = today.getMonth();
+			   var nowDate = today.getDate();
+			   var nowDay = today.getDay();
+			   var dayStr ="";
+			   if(nowDay==0) dayStr="일요일";
+			   else if(nowDay==1) dayStr="월요일";
+			   else if(nowDay==2) dayStr="화요일";
+			   else if(nowDay==3) dayStr="수요일";
+			   else if(nowDay==4) dayStr="목요일";
+			   else if(nowDay==5) dayStr="금요일";
+			   else dayStr="토요일";
+			   
+			   console.log(nowMonth+1);
+			   console.log(nowDate);
+			   console.log(nowDay);
+			   console.log(dayStr);
+			   
+			   document.getElementById("h01").innerText = (nowMonth+1)+"월 "+nowDate+"일 "+dayStr;
+			   //.innerHTML .innerText
+			   
+		   }
+		   function dDay(){
+			   var dDayTime = lastDay.getTime() - today.getTime();
+			   var dDay = Math.ceil(dDayTime/(1000*60*60*24));
+			   document.getElementById("h02").innerText = dDay + " 일" ;
+		   }
+		   
+		</script>
+		<style>
+		  h2{width:800px; font-size:30px; text-align: center; margin:30px auto; }
+		  div{width:800px; text-align: center; margin:0 auto; }
+		</style>
+	</head>
+	<body>
+	
+	    <h2>[ 2023년까지 남은 일수 ]</h2>
+	    <h2 id="h02"></h2>
+	    <div><button onclick="dDay()">일수 계산</button></div>
+	    <hr>
+	    <h2>[ 현재날짜 ]</h2>
+	    <h2 id="h01"></h2>
+	    <div><button onclick="add()">현재날짜 생성</button></div>
+	
+	</body>
+</html>
