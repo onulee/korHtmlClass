@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<title>Insert title here</title>
+        <style>
+          div{width:200px; height:200px; border:1px solid black; }
+          .st{border-radius: 20%;}
+          .on{ background: yellow; }
+          .off{ background: white; border:5px solid black; }
+        </style>	    
+	    <script>
+	      $(function(){
+	    	  	    	  
+	      });
+	      
+	      function btn(){
+	    	  //alert("test1");
+	    	  $("div").toggleClass("on");
+	      }
+	      function btn1(){
+	    	  //alert("test1");
+	    	  $("div").addClass("on");
+	    	  $("div").removeClass("off");
+	      }
+	      function btn2(){
+	    	  //alert("test2");
+	    	  $("div").removeClass("on");
+	    	  $("div").addClass("off");
+	      }
+	      
+	    </script>
+	</head>
+	<body>
+	  <div class="st on"></div>
+	  <button onclick="btn()">토글클래스</button>
+	  <button onclick="btn1()">클래스 추가</button>
+	  <button onclick="btn2()">클래스 삭제</button>
+	
+	</body>
+</html>

@@ -6,61 +6,97 @@
 		<title>Insert title here</title>
 		<style>
 		  *{padding:0; margin:0;}
-		  h2{width:1050px; text-align: center; margin:0 auto;}
-		  form{width:1050px; margin:0 auto;}
-		  table{width:1050px; margin:30px auto; text-align: center; }
+		  h2{width:800px; text-align: center; margin:0 auto;}
+		  form{width:800px; margin:0 auto;}
+		  table{width:800px; margin:30px auto; text-align: center; }
 		  table,th,td{border:1px solid black; border-collapse: collapse;}
 		  th{height:40px; background: #efefef; }
-		  td{height:35px; width:150px; }
+		  td{height:35px; width:100px; }
 		</style>
 		<script>
+		  let temp=0; //등록
+		  let count=1;
 		  $(function(){
 			 $("#writeBtn").click(function(){
-				 let no = $("#no").val();
+				 let no;
 				 let name = $("#name").val();
 				 let kor = Number($("#kor").val());
 				 let eng = Number($("#eng").val());
 				 let math = Number($("#math").val());
 				 let total = kor+eng+math;
 				 let avg = (total/3.0).toFixed(2);
-				 alert("학생성적을 추가했습니다.");
 				 
-				 let htmlData="";
-				 htmlData += "<tr>";
-				 htmlData += "<td>"+no+"</td>";
-				 htmlData += "<td>"+name+"</td>";
-				 htmlData += "<td>"+kor+"</td>";
-				 htmlData += "<td>"+eng+"</td>";
-				 htmlData += "<td>"+math+"</td>";
-				 htmlData += "<td>"+total+"</td>";
-				 htmlData += "<td class='delete'>"+avg+"</td>";
-				 htmlData += "</tr>";
-				 
-				 $("#tbody").append(htmlData);  //append-뒤,prepend-앞,html-기존삭제후 추가
+				 if(temp==0){
+				     no = count;
+					 alert("학생성적을 추가했습니다.");
+					 let htmlData="";
+					 htmlData += "<tr id='"+no+"'>";
+					 htmlData += "<td>"+no+"</td>";
+					 htmlData += "<td>"+name+"</td>";
+					 htmlData += "<td>"+kor+"</td>";
+					 htmlData += "<td>"+eng+"</td>";
+					 htmlData += "<td>"+math+"</td>";
+					 htmlData += "<td>"+total+"</td>";
+					 htmlData += "<td>"+avg+"</td>";
+					 htmlData += "<td>";
+					 htmlData += "<button onclick='modifyBtn("+no+")'>수정</button>&nbsp";
+					 htmlData += "<button onclick='deleteBtn("+no+")'>삭제</button>";
+					 htmlData += "</td>";
+					 htmlData += "</tr>";
+					 count++;
+					 $("#tbody").append(htmlData);  //append-뒤,prepend-앞,html-기존삭제후 추가 
+				 }else{
+					 no = $("#no").val();
+					 alert("학생성적을 수정했습니다.");
+					 let htmlData="";
+					 htmlData += "<td>"+no+"</td>";
+					 htmlData += "<td>"+name+"</td>";
+					 htmlData += "<td>"+kor+"</td>";
+					 htmlData += "<td>"+eng+"</td>";
+					 htmlData += "<td>"+math+"</td>";
+					 htmlData += "<td>"+total+"</td>";
+					 htmlData += "<td>"+avg+"</td>";
+					 htmlData += "<td>";
+					 htmlData += "<button onclick='modifyBtn("+no+")'>수정</button>&nbsp";
+					 htmlData += "<button onclick='deleteBtn("+no+")'>삭제</button>";
+					 htmlData += "</td>";
+					 $("#"+no).html(htmlData);  //append-뒤,prepend-앞,html-기존삭제후 추가  
+				 }
 				 
 				 $("#no").val("");
 				 $("#name").val("");
 				 $("#kor").val("");
 				 $("#eng").val("");
 				 $("#math").val("");
-			 });
-			 
-			 $(".delete").click(function(){
-				 alert("test");
-				 let tr = $(this).parent;
-				 console.log(tr);
-			 });
-			 
-			 
-				  
+				 
+				 temp=0;
+			 });//writeBtn
 		  });
+		  
+		  //삭제 함수
+		  function deleteBtn(no){
+			  alert("학생성적을 삭제합니다.");
+			  $("#"+no).remove();
+		  }
+		  
+		  //수정 함수
+		  function modifyBtn(no){
+			  temp=1; //수정
+			  alert("수정버튼을 클릭했습니다.");
+			  let td = $("#"+no).children();
+			  $("#no").val(td.eq(0).text());
+			  $("#name").val(td.eq(1).text());
+			  $("#kor").val(td.eq(2).text());
+			  $("#eng").val(td.eq(3).text());
+			  $("#math").val(td.eq(4).text());
+		  }
+		  
 		</script>
 	</head>
 	<body>
 	    <h2>학생성적등록</h2>
 	    <form action="" name="frm" method="get">
-	      <label>번호</label>
-	      <input type="text" id="no" name="no"><br>
+	      <input type="hidden" id="no" name="no"><br>
 	      <label>이름</label>
 	      <input type="text" id="name" name="name"><br>
 	      <label>국어</label>
@@ -84,18 +120,11 @@
 		        <th>수학</th>
 		        <th>합계</th>
 		        <th>평균</th>
+		        <th>삭제여부</th>
 		      </tr>
 	      </thead>
 	      <tbody id="tbody">
-	         <tr>
-	           <td>1</td>
-	           <td>1</td>
-	           <td>1</td>
-	           <td>1</td>
-	           <td>1</td>
-	           <td>1</td>
-	           <td class="delete">1</td>
-	         </tr>
+	         
 		      
 	      </tbody>
 	    </table>

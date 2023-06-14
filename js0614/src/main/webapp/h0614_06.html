@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<title>Insert title here</title>
+		<script>
+		  $(function(){
+			  $("#chBtn").click(function(){
+				 //alert("체크박스 개수 : "+ $("input").length);
+				 //alert("체크된 개수 : "+ $("input[name='hobby']:checked").length);
+				 console.log("체크된 개수 : "+ $("input[name='hobby']:checked").length);
+				 console.log($("input[name='hobby']:checked"));
+				 //console.log($("input[name='hobby']:checked").eq(0).val());
+				 //제이쿼리 each
+				 $("input[name='hobby']:checked").each(function(){
+					 console.log($(this).val());
+				 })     
+			  });
+		  });//function
+		  
+		  //자바스크립트 forEach
+		  function arrBtn(){
+			  //alert("실행");
+			  arrNames = ["홍길동","유관순","이순신","강감찬","김구"];
+			  arrNames.forEach(function(arrName){
+				 console.log(arrName); 
+			  });
+		  }
+		
+		</script>
+	</head>
+	<body>
+	   <button onclick="arrBtn()">배열출력</button>
+	    <h2 id="h">배열출력 : </h2>
+	
+	
+	   <form action="" name="" method="">
+	     <h2>취미</h2>
+	     <input type="checkbox" name="hobby" id="game" value="game" checked="checked">
+	     <label for="game">게임</label>
+	     <input type="checkbox" name="hobby" id="golf" value="golf">
+	     <label for="golf">골프</label>
+	     <input type="checkbox" name="hobby" id="swim" value="swim">
+	     <label for="swim">수영</label>
+	     <input type="checkbox" name="hobby" id="run" value="run">
+	     <label for="run">달리기</label>
+	     <input type="checkbox" name="hobby" id="book" value="book">
+	     <label for="book">독서</label>
+	     <br><br>
+	     <button type="button" id="chBtn">확인</button>
+	   </form>
+	
+	</body>
+</html>
