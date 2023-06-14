@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<title>Insert title here</title>
+		<style>
+		  *{padding:0; margin:0;}
+		  h2{width:1000px; text-align: center;}
+		  table{width:1000px; margin:30px auto; text-align: center; }
+		  table,th,td{border:1px solid black; border-collapse: collapse;}
+		  th{height:40px; background: #efefef; }
+		  td{height:35px; width:200px; }
+		</style>
+		<script>
+		  $(function(){
+			  $("#dbtn").click(function(){
+				 alert("삭제버튼이 클릭되었습니다.");
+                 //$("#t01").text("삭제가능");
+                 $("#t01").html("<td style='color:red;'>삭제가능</td>")
+				 //$("#dbtn").prevAll()[3].html("<td>삭제가능</td>"); 
+				 //console.log($("#dbtn").prevAll()[3]);
+			  });//dbtn
+			  
+			  $("#writeBtn").click(function(){
+				  let no = $("#no").val(); // document.getElmentById("no").value;
+				  if(no==null || no=="") {
+					  alert("글을 입력하셔야 등록이 가능합니다.");
+					  $("#no").focus();
+					  return false;
+				  }
+				  let title = $("#title").val(); 
+				  let user = $("#user").val(); 
+				  console.log(no,title,user);
+				  
+				  let htmlData="";
+				  htmlData += "<tr>";
+				  htmlData += "<td>"+no+"</td>";
+				  htmlData += "<td>"+title+"</td>";
+				  htmlData += "<td>"+user+"</td>";
+				  htmlData += "<td>2023-06-14</td>";
+				  htmlData += "<td>삭제</td>";
+				  htmlData += "</tr>";
+				  
+				  //tbody 하위에 html등록
+				  $("#tbody").append(htmlData);
+				  
+				  //입력된 글 삭제
+				  $("#no").val("");
+				  $("#title").val("");  
+				  $("#user").val("");  
+			      
+				  
+				  
+			  });//writeBtn
+		  });
+		</script>
+	</head>
+	<body>
+	    <h2>글쓰기</h2>
+	    <form action="" name="frm" method="get">
+	      <label>번호</label>
+	      <input type="text" id="no" name="no"><br>
+	      <label>제목</label>
+	      <input type="text" id="title" name="title"><br>
+	      <label>작성자</label>
+	      <input type="text" id="user" name="user"><br>
+	      <button type="button" id="writeBtn">글등록</button>
+	    </form>
+	    <br>
+	
+	    <h2>자유게시판</h2>
+	    <table>
+	      <thead>
+		      <tr>
+		        <th>번호</th>
+		        <th>제목</th>
+		        <th>작성자</th>
+		        <th>날짜</th>
+		        <th>삭제여부</th>
+		      </tr>
+	      </thead>
+	      <tbody id="tbody">
+		      <tr>
+		        <td id="t01">1</td>
+		        <td>게시글입니다.</td>
+		        <td>홍길동</td>
+		        <td>2023-06-14</td>
+		        <td>삭제</td>
+		      </tr>
+		      
+	      </tbody>
+	    </table>
+	    
+	    
+	
+	</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<title>Insert title here</title>
+		<style>
+		  *{padding:0; margin:0;}
+		  h2{width:1050px; text-align: center; margin:0 auto;}
+		  form{width:1050px; margin:0 auto;}
+		  table{width:1050px; margin:30px auto; text-align: center; }
+		  table,th,td{border:1px solid black; border-collapse: collapse;}
+		  th{height:40px; background: #efefef; }
+		  td{height:35px; width:150px; }
+		</style>
+		<script>
+		  $(function(){
+			 $("#writeBtn").click(function(){
+				 let no = $("#no").val();
+				 let name = $("#name").val();
+				 let kor = Number($("#kor").val());
+				 let eng = Number($("#eng").val());
+				 let math = Number($("#math").val());
+				 let total = kor+eng+math;
+				 let avg = (total/3.0).toFixed(2);
+				 alert("학생성적을 추가했습니다.");
+				 
+				 let htmlData="";
+				 htmlData += "<tr>";
+				 htmlData += "<td>"+no+"</td>";
+				 htmlData += "<td>"+name+"</td>";
+				 htmlData += "<td>"+kor+"</td>";
+				 htmlData += "<td>"+eng+"</td>";
+				 htmlData += "<td>"+math+"</td>";
+				 htmlData += "<td>"+total+"</td>";
+				 htmlData += "<td class='delete'>"+avg+"</td>";
+				 htmlData += "</tr>";
+				 
+				 $("#tbody").append(htmlData);  //append-뒤,prepend-앞,html-기존삭제후 추가
+				 
+				 $("#no").val("");
+				 $("#name").val("");
+				 $("#kor").val("");
+				 $("#eng").val("");
+				 $("#math").val("");
+			 });
+			 
+			 $(".delete").click(function(){
+				 alert("test");
+				 let tr = $(this).parent;
+				 console.log(tr);
+			 });
+			 
+			 
+				  
+		  });
+		</script>
+	</head>
+	<body>
+	    <h2>학생성적등록</h2>
+	    <form action="" name="frm" method="get">
+	      <label>번호</label>
+	      <input type="text" id="no" name="no"><br>
+	      <label>이름</label>
+	      <input type="text" id="name" name="name"><br>
+	      <label>국어</label>
+	      <input type="text" id="kor" name="kor"><br>
+	      <label>영어</label>
+	      <input type="text" id="eng" name="eng"><br>
+	      <label>수학</label>
+	      <input type="text" id="math" name="math"><br>
+	      <button type="button" id="writeBtn">성적등록</button>
+	    </form>
+	    <br>
+	
+	    <h2>학생성적관리시스템</h2>
+	    <table>
+	      <thead>
+		      <tr>
+		        <th>번호</th>
+		        <th>이름</th>
+		        <th>국어</th>
+		        <th>영어</th>
+		        <th>수학</th>
+		        <th>합계</th>
+		        <th>평균</th>
+		      </tr>
+	      </thead>
+	      <tbody id="tbody">
+	         <tr>
+	           <td>1</td>
+	           <td>1</td>
+	           <td>1</td>
+	           <td>1</td>
+	           <td>1</td>
+	           <td>1</td>
+	           <td class="delete">1</td>
+	         </tr>
+		      
+	      </tbody>
+	    </table>
+	    
+	    
+	
+	</body>
+</html>
