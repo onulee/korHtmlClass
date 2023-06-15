@@ -80,6 +80,7 @@
 					감사합니다.
 					<strong>회원가입이 완료되었습니다.</strong>
 					<strong>가입한 아이디 : <%= request.getParameter("userId") %> </strong>
+					<strong>이름 : <%= request.getParameter("name") %> </strong>
 				</p>
 			</div>	
 				

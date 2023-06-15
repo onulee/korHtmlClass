@@ -9,10 +9,12 @@
 	<body>
 	  <%
 	    String id = request.getParameter("id");
+	    String name = request.getParameter("name");
+	    
 	    if(id.equals("aaa")){
-	    	//response.sendRedirect("j0615_08.jsp");
+	    	response.sendRedirect("j0615_08.jsp");
 	    }else{
-	    	response.sendRedirect("join03_success.jsp?id="+id+"&name="+"홍길동");
+	    	response.sendRedirect("join03_success.jsp?userId="+id+"&name="+name);
 	    }
 	  %>
 	

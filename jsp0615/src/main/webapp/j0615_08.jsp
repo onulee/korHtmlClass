@@ -10,6 +10,8 @@
 	  <form action="check.jsp" method="post">
 	    <label>아이디</label>
 	    <input type="text" name="id" ><br>
+	    <label>이름</label>
+	    <input type="text" name="name" ><br>
 	    <input type="submit" value="전송">
 	  </form>
 	
