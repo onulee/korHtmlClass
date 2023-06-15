@@ -8,7 +8,7 @@
 	</head>
 	<body>
 	  <h2>회원가입</h2>
-	  <form action="TestServlet" name="frm" method="get">
+	  <form action="TestServlet" name="frm" method="post">
 	    <label>이름</label>
 	    <input type="text" name="name"><br>
 	    <label>성별</label><br>
