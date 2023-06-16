@@ -11,7 +11,7 @@
 	    String id = request.getParameter("id");
 	    String name = request.getParameter("name");
 	    
-	    if(id.equals("aaa")){
+	    if(id.equals("aaa")){   //aaa아이디가 존재할시
 	    	response.sendRedirect("j0615_08.jsp");
 	    }else{
 	    	response.sendRedirect("join03_success.jsp?userId="+id+"&name="+name);
