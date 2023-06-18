@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -10,8 +12,13 @@
 	 	<header>
 	 		<div id="nav_up">
 	 			<ul>
+	 				<% if(session.getAttribute("sessionId")==null){ %>
 	 				<li>회원가입</li>
-	 				<li>로그인</li>
+	 				<li><a href="login.jsp">로그인</a></li>
+	 				<%}else{%>
+	 				<li><%= (String)session.getAttribute("sessionNicName") %> 님</li>
+	 				<li><a href="logout.jsp">로그아웃</a></li>
+	 				<%}%>
 	 				<li>고객행복센터</li>
 	 				<li>배송정보검색</li>
 	 				<li>기프트카드 등록</li>

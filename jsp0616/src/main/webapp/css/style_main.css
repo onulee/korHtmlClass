@@ -4,7 +4,7 @@
 
 ul,ol{ list-style-type: none; }
 
-a{ text-decoration: none; }
+a, a:link,a:visited,a:hover,a:active{ text-decoration: none; color:white; }
 
 #nav_up{ width:100%; height: 35px; background: #202020; 
 	text-align: left;}
@@ -45,7 +45,7 @@ nav>ul:nth-child(3)>li:nth-child(1)>a>span{ display: block; width: 50px; height:
 	 position: relative; top:30px; left:-5px; }
 	 
 nav>ul:nth-child(3)>li:nth-child(2)>a{ width:32px; height: 32px; display: inline-block;
-	background: url('../images/ico_set.png') -628px -320px; no-repeat; 
+	background: url('../images/ico_set.png') -628px -320px no-repeat;
 	background-size: 800px 800px; letter-spacing: -2px;}
 
 nav>ul:nth-child(3)>li:nth-child(2)>a>span{ display: block; width: 50px; height: 20px; 
