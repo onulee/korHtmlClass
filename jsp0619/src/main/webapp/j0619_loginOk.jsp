@@ -1,5 +1,5 @@
-<%@page import="com.java.www.Member"%>
-<%@page import="com.java.www.MemberDao"%>
+<%@page import="com.java.www.dto.Member"%>
+<%@page import="com.java.www.dao.MemberDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     

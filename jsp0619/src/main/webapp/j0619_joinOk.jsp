@@ -1,5 +1,5 @@
-<%@page import="com.java.www.Member"%>
-<%@page import="com.java.www.MemberDao"%>
+<%@page import="com.java.www.dto.Member"%>
+<%@page import="com.java.www.dao.MemberDao"%>
 <%@page import="javax.naming.InitialContext"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.PreparedStatement"%>
